@@ -8,9 +8,9 @@ $ apt source $package_name
 $ sudo apt build-beb $package_name			
 $ cd $package_name/src_or_smth					
 $ patch < patchname.diff								
-$ debuild -us -uc
-$ cd $directory_there_where_you_download_source	
-$ sudo dpkg -i $package_name-smth.deb		
+$ debuild -us -uc												
+$ cd $directory_there_where_you_download_source		
+$ sudo dpkg -i $package_name-smth.deb			
 
 ##XDG patches
 
