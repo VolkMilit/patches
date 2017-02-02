@@ -1,0 +1,16 @@
+--- ./LnxMain.c.orig	2017-02-02 21:55:38.516655602 +0800
++++ ./LnxMain.c	2017-02-02 21:55:20.012655885 +0800
+@@ -240,11 +240,11 @@
+ 	ScanBios(PACKAGE_DATA_DIR "/bios");
+ 	ScanBios(PSEMU_DATA_DIR "/bios");
+ 
+-	currentdir = g_strconcat(getenv("HOME"), "/.psemu-plugins/", NULL);
++	currentdir = g_strconcat(getenv("HOME"), "/.local/share/psemu-plugins/", NULL);
+ 	ScanPlugins(currentdir);
+ 	g_free(currentdir);
+ 
+-	currentdir = g_strconcat(getenv("HOME"), "/.psemu/", NULL);
++	currentdir = g_strconcat(getenv("HOME"), "/.local/share/psemu/", NULL);
+ 	ScanPlugins(currentdir);
+ 	g_free(currentdir);
+ 

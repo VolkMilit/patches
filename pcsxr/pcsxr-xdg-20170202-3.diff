@@ -1,0 +1,11 @@
+--- ./MemcardDlg.c.orig	2017-02-02 21:55:57.136655316 +0800
++++ ./MemcardDlg.c	2017-02-02 21:19:08.000000000 +0800
+@@ -376,7 +376,7 @@
+ 		NULL);
+ 
+ 	// Card should be put into $HOME/.pcsxr/memcards
+-	path = g_build_filename(g_get_home_dir(), "/.pcsxr", "memcards", NULL);
++	path = g_build_filename(g_get_home_dir(), "/.local/share/pcsxr", "memcards", NULL);
+ 	gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(chooser), path);
+ 	gtk_file_chooser_set_current_name(GTK_FILE_CHOOSER(chooser), _("New Memory Card.mcd"));
+ 	gtk_file_chooser_set_do_overwrite_confirmation(GTK_FILE_CHOOSER(chooser), TRUE);

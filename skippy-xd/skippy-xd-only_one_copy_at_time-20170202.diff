@@ -1,0 +1,30 @@
+diff --git a/src/skippy.c b/src/skippy.c
+index a2d37da..432779c 100644
+--- a/src/skippy.c
++++ b/src/skippy.c
+@@ -1139,7 +1139,13 @@ parse_args(session_t *ps, int argc, char **argv, bool first_pass) {
+ 	}
+ }
+ 	
+-int main(int argc, char *argv[]) {
++int main(int argc, char *argv[]) 
++{
++	if (access( "/tmp/.skippy-xd", F_OK ) != -1)
++		exit(0);
++	
++	fopen("/tmp/.skippy-xd", "w");
++	
+ 	session_t *ps = NULL;
+ 	int ret = RET_SUCCESS;
+ 	Display *dpy = NULL;
+@@ -1402,7 +1408,9 @@ main_end:
+ 
+ 		if (ps->dpy)
+ 			XCloseDisplay(dpy);
+-
++		
++		remove("/tmp/.skippy-xd");
++		
+ 		free(ps);
+ 	}
+ 

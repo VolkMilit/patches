@@ -1,0 +1,29 @@
+--- ./Linux.h.orig	2017-02-02 21:54:44.240656434 +0800
++++ ./Linux.h	2017-02-02 21:19:08.000000000 +0800
+@@ -26,16 +26,16 @@
+ 
+ #include "Cheat.h"
+ 
+-#define DEFAULT_MEM_CARD_1 "/.pcsxr/memcards/card1.mcd"
+-#define DEFAULT_MEM_CARD_2 "/.pcsxr/memcards/card2.mcd"
+-#define MEMCARD_DIR "/.pcsxr/memcards/"
+-#define PLUGINS_DIR "/.pcsxr/plugins/"
+-#define PLUGINS_CFG_DIR "/.pcsxr/plugins/cfg/"
+-#define PCSXR_DOT_DIR "/.pcsxr/"
+-#define BIOS_DIR "/.pcsxr/bios/"
+-#define STATES_DIR "/.pcsxr/sstates/"
+-#define CHEATS_DIR "/.pcsxr/cheats/"
+-#define PATCHES_DIR "/.pcsxr/patches/"
++#define DEFAULT_MEM_CARD_1 "/.local/share/pcsxr/memcards/card1.mcd"
++#define DEFAULT_MEM_CARD_2 "/.local/share/pcsxr/memcards/card2.mcd"
++#define MEMCARD_DIR "/.local/share/pcsxr/memcards/"
++#define PLUGINS_DIR "/.local/share/pcsxr/plugins/"
++#define PLUGINS_CFG_DIR "/.config/pcsxr/plugins/cfg/"
++#define PCSXR_DOT_DIR "/.config/pcsxr/"
++#define BIOS_DIR "/.local/share/pcsxr/bios/"
++#define STATES_DIR "/.local/share/pcsxr/sstates/"
++#define CHEATS_DIR "/.local/share/pcsxr/cheats/"
++#define PATCHES_DIR "/.local/share/pcsxr/patches/"
+ 
+ extern gboolean UseGui;
+ extern int StatesC;

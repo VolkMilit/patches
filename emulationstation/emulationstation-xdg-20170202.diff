@@ -1,0 +1,125 @@
+diff --git a/es-app/src/SystemData.cpp b/es-app/src/SystemData.cpp
+index 5e2b9b4..a6dfae0 100644
+--- a/es-app/src/SystemData.cpp
++++ b/es-app/src/SystemData.cpp
+@@ -382,7 +382,7 @@ void SystemData::deleteSystems()
+ 
+ std::string SystemData::getConfigPath(bool forWrite)
+ {
+-	fs::path path = getHomePath() + "/.emulationstation/es_systems.cfg";
++	fs::path path = getHomePath() + "/.config/emulationstation/es_systems.cfg";
+ 	if(forWrite || fs::exists(path))
+ 		return path.generic_string();
+ 
+@@ -397,7 +397,7 @@ std::string SystemData::getGamelistPath(bool forWrite) const
+ 	if(fs::exists(filePath))
+ 		return filePath.generic_string();
+ 
+-	filePath = getHomePath() + "/.emulationstation/gamelists/" + mName + "/gamelist.xml";
++	filePath = getHomePath() + "/.config/emulationstation/gamelists/" + mName + "/gamelist.xml";
+ 	if(forWrite) // make sure the directory exists if we're going to write to it, or crashes will happen
+ 		fs::create_directories(filePath.parent_path());
+ 	if(forWrite || fs::exists(filePath))
+diff --git a/es-app/src/main.cpp b/es-app/src/main.cpp
+index 393f199..d3aa7a6 100644
+--- a/es-app/src/main.cpp
++++ b/es-app/src/main.cpp
+@@ -108,7 +108,7 @@ bool verifyHomeFolderExists()
+ {
+ 	//make sure the config directory exists
+ 	std::string home = getHomePath();
+-	std::string configDir = home + "/.emulationstation";
++	std::string configDir = home + "/.config/emulationstation";
+ 	if(!fs::exists(configDir))
+ 	{
+ 		std::cout << "Creating config directory \"" << configDir << "\"\n";
+diff --git a/es-app/src/scrapers/Scraper.cpp b/es-app/src/scrapers/Scraper.cpp
+index c827a47..6533671 100644
+--- a/es-app/src/scrapers/Scraper.cpp
++++ b/es-app/src/scrapers/Scraper.cpp
+@@ -273,7 +273,7 @@ std::string getSaveAsPath(const ScraperSearchParams& params, const std::string&
+ 	const std::string subdirectory = params.system->getName();
+ 	const std::string name = params.game->getPath().stem().generic_string() + "-" + suffix;
+ 
+-	std::string path = getHomePath() + "/.emulationstation/downloaded_images/";
++	std::string path = getHomePath() + "/.config/emulationstation/downloaded_images/";
+ 
+ 	if(!boost::filesystem::exists(path))
+ 		boost::filesystem::create_directory(path);
+diff --git a/es-core/src/InputManager.cpp b/es-core/src/InputManager.cpp
+index 3bd26b8..5291f7f 100644
+--- a/es-core/src/InputManager.cpp
++++ b/es-core/src/InputManager.cpp
+@@ -332,7 +332,7 @@ void InputManager::writeDeviceConfig(InputConfig* config)
+ std::string InputManager::getConfigPath()
+ {
+ 	std::string path = getHomePath();
+-	path += "/.emulationstation/es_input.cfg";
++	path += "/.config/emulationstation/es_input.cfg";
+ 	return path;
+ }
+ 
+diff --git a/es-core/src/Log.cpp b/es-core/src/Log.cpp
+index 643aef1..dd64998 100644
+--- a/es-core/src/Log.cpp
++++ b/es-core/src/Log.cpp
+@@ -15,7 +15,7 @@ LogLevel Log::getReportingLevel()
+ std::string Log::getLogPath()
+ {
+ 	std::string home = getHomePath();
+-	return home + "/.emulationstation/es_log.txt";
++	return home + "/.config/emulationstation/es_log.txt";
+ }
+ 
+ void Log::setReportingLevel(LogLevel level)
+diff --git a/es-core/src/Settings.cpp b/es-core/src/Settings.cpp
+index 779ee71..a6d41ae 100644
+--- a/es-core/src/Settings.cpp
++++ b/es-core/src/Settings.cpp
+@@ -91,7 +91,7 @@ void saveMap(pugi::xml_document& doc, std::map<K, V>& map, const char* type)
+ 
+ void Settings::saveFile()
+ {
+-	const std::string path = getHomePath() + "/.emulationstation/es_settings.cfg";
++	const std::string path = getHomePath() + "/.config/emulationstation/es_settings.cfg";
+ 
+ 	pugi::xml_document doc;
+ 
+@@ -112,7 +112,7 @@ void Settings::saveFile()
+ 
+ void Settings::loadFile()
+ {
+-	const std::string path = getHomePath() + "/.emulationstation/es_settings.cfg";
++	const std::string path = getHomePath() + "/.config/emulationstation/es_settings.cfg";
+ 
+ 	if(!boost::filesystem::exists(path))
+ 		return;
+@@ -152,4 +152,4 @@ void Settings::setMethodName(const std::string& name, type value) \
+ SETTINGS_GETSET(bool, mBoolMap, getBool, setBool);
+ SETTINGS_GETSET(int, mIntMap, getInt, setInt);
+ SETTINGS_GETSET(float, mFloatMap, getFloat, setFloat);
+-SETTINGS_GETSET(const std::string&, mStringMap, getString, setString);
+\ No newline at end of file
++SETTINGS_GETSET(const std::string&, mStringMap, getString, setString);
+diff --git a/es-core/src/ThemeData.cpp b/es-core/src/ThemeData.cpp
+index fce8662..f5593d2 100644
+--- a/es-core/src/ThemeData.cpp
++++ b/es-core/src/ThemeData.cpp
+@@ -362,7 +362,7 @@ const std::shared_ptr<ThemeData>& ThemeData::getDefault()
+ 	{
+ 		theme = std::shared_ptr<ThemeData>(new ThemeData());
+ 
+-		const std::string path = getHomePath() + "/.emulationstation/es_theme_default.xml";
++		const std::string path = getHomePath() + "/.config/emulationstation/es_theme_default.xml";
+ 		if(fs::exists(path))
+ 		{
+ 			try
+@@ -432,7 +432,7 @@ std::map<std::string, ThemeSet> ThemeData::getThemeSets()
+ 	static const size_t pathCount = 2;
+ 	fs::path paths[pathCount] = { 
+ 		"/etc/emulationstation/themes", 
+-		getHomePath() + "/.emulationstation/themes" 
++		getHomePath() + "/.config/emulationstation/themes" 
+ 	};
+ 
+ 	fs::directory_iterator end;

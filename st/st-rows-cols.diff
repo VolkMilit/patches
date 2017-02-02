@@ -1,0 +1,11 @@
+--- st.c	2016-11-05 13:21:25.225281647 +0800
++++ st.c.patch	2016-11-05 13:29:00.315794426 +0800
+@@ -4423,7 +4423,7 @@
+ int
+ main(int argc, char *argv[])
+ {
+-	uint cols = 80, rows = 24;
++	uint cols = 140, rows = 46;
+ 
+ 	xw.l = xw.t = 0;
+ 	xw.isfixed = False;

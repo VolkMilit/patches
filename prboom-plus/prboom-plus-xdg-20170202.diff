@@ -1,0 +1,11 @@
+--- i_system.c.orig	2017-02-02 22:07:06.252645050 +0800
++++ i_system.c	2017-02-02 22:05:54.860646145 +0800
+@@ -392,7 +392,7 @@
+ // cph - V.Aguilar (5/30/99) suggested return ~/.lxdoom/, creating
+ //  if non-existant
+ // cph 2006/07/23 - give prboom+ its own dir
+-static const char prboom_dir[] = {"/.prboom-plus"}; // Mead rem extra slash 8/21/03
++static const char prboom_dir[] = {"/.config/prboom-plus"}; // Mead rem extra slash 8/21/03
+ 
+ const char *I_DoomExeDir(void)
+ {

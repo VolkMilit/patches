@@ -1,0 +1,11 @@
+--- ./Plugin.c.orig	2017-02-02 21:56:19.172654978 +0800
++++ Plugin.c	2017-02-02 21:19:08.000000000 +0800
+@@ -363,7 +363,7 @@
+ 		char dotdir[MAXPATHLEN];
+ 
+ 		strncpy(dotdir, getenv("HOME"), MAXPATHLEN-100);
+-		strcat(dotdir, "/.pcsxr/plugins/");
++		strcat(dotdir, "/.local/share/pcsxr/plugins/");
+ 
+ 		strcpy(info.EmuName, "PCSXR " PACKAGE_VERSION);
+ 		strncpy(info.CdromID, CdromId, 9);

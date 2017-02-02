@@ -1,0 +1,20 @@
+--- Main.cpp	2016-09-22 20:12:55.012896343 +0800
++++ Main.cpp.orig	2016-11-10 20:33:08.949738306 +0800
+@@ -40,7 +40,7 @@
+ 				"\n"
+ 				"Options:\n"
+ 				"  --help              Show this help message.\n"
+-				"  --logfile           Write log to ~/.ssr/log-DATE_TIME.txt instead of stdout.\n"
++				"  --logfile           Write log to ~/.config/ssr/log-DATE_TIME.txt instead of stdout.\n"
+ 				"  --statsfile[=FILE]  Write recording statistics to FILE. If FILE is omitted,\n"
+ 				"                      /dev/shm/simplescreenrecorder-stats-PID is used. It will\n"
+ 				"                      be updated continuously and deleted when the recording\n"
+@@ -238,7 +238,7 @@
+ }
+ 
+ QString GetApplicationUserDir(const QString& subdir) {
+-	QString dir = QDir::homePath() + "/.ssr";
++	QString dir = QDir::homePath() + "/.config/ssr";
+ 	if(!subdir.isEmpty())
+ 		dir += "/" + subdir;
+ 	if(!QDir::root().mkpath(dir)) {
