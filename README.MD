@@ -4,7 +4,7 @@ I'm getting tired of trash can, that some programs try to do from my $HOME dir, 
 
 ###How to install patch:
 On Debian (Stretch):														
-$ apt source $package_name
+$ apt source $package_name						
 $ sudo apt build-beb $package_name			
 $ cd $package_name/src_or_smth					
 $ patch < patchname.diff								
@@ -14,16 +14,19 @@ $ sudo dpkg -i $package_name-smth.deb
 
 ##XDG patches
 
-####dosbox
+####Audacity
+Must follow XDG. Move all configs in $HOME/.config/audacity-data.
+
+####DosBbox
 Must follow XDG. There is only one config file, so store it in $HOME/.config/dosbox
 
 ####Emulationstation
 Must follow XDG. Move all configs and themes in $HOME/.config/emulationstation
 
-####pcsxr
+####PCSXr
 Must follow XDG. Move configs in $HOME/.config/pcsxr. All bios, plugins, memcards, states in $HOME/.local/share/pcsxr
 
-####prboom-plus
+####PrBoom-plus
 Must follow XDG. Move configs in $HOME/.config/prboom-plus
 
 ####Simple screen recorder
@@ -47,7 +50,7 @@ Run one copy of the program at a time.
 - Mednafen - can't read that pasta code. I found (maybe not), where is dotfiles is stored in code, but can't figure how can I fix that.
 - FBReader - same as Mednafen. Cool structure of code, yep, but I just CANT find where dotfiles created\writed.
 - QCalculator - there is two package depends of each other. I found, and fix the dots, but it's doesn't work.
-- Audacity - todo
+- Audacity - done
 - QTCreator - todo
 - Tux racer - todo
 - GStreamer - todo
