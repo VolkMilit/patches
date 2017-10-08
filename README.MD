@@ -3,13 +3,21 @@
 I'm getting tired of trash can, that some programs try to do from my $HOME dir, so I started patch them to follow XDG. Anyway I have other patch for several programms. Maybe somebody will find them useful.						
 
 ### How to install patch:
+
 On Debian (Stretch):														
-$ apt source $package_name						
+
+$ apt source $package_name				
+		
 $ sudo apt build-beb $package_name			
+
 $ cd $package_name/src_or_smth					
+
 $ patch < patchname.diff								
+
 $ debuild -us -uc												
+
 $ cd $directory_there_where_you_download_source		
+
 $ sudo dpkg -i $package_name-smth.deb			
 
 ## XDG patches
