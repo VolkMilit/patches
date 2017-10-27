@@ -41,8 +41,7 @@ Must follow XDG. Move configs in $HOME/.config/prboom-plus
 Must follow XDG. Move all configs in $HOME/.config/ssr
 
 #### UHexen
-Need to fix something. BTW it's proprietary software, so I dunno, if that legal to publish this.												
-~~Must follow XDG. Move all stuff to $HOME/.local/share/hexen2 and $HOME/.local/share/hexen2demo.
+Need to fix something. Must follow XDG. Move all stuff to $HOME/.local/share/hexen2 and $HOME/.local/share/hexen2demo.
 
 ## Other patches
 
