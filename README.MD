@@ -23,9 +23,9 @@ $ sudo dpkg -i $package_name-smth.deb
 ## XDG patches
 
 #### Audacity
-Must follow XDG. Move all configs in $HOME/.config/audacity-data.
+Must follow XDG. Move all configs in $HOME/.config/audacity-data
 
-#### DosBbox
+#### DosBox
 Must follow XDG. There is only one config file, so store it in $HOME/.config/dosbox
 
 #### Emulationstation
@@ -41,10 +41,13 @@ Must follow XDG. Move configs in $HOME/.config/prboom-plus
 Must follow XDG. Move all configs in $HOME/.config/ssr
 
 #### UHexen
-Need to fix something. Must follow XDG. Move all stuff to $HOME/.local/share/hexen2 and $HOME/.local/share/hexen2demo.
+Need to fix something. Must follow XDG. Move all stuff to $HOME/.local/share/hexen2 and $HOME/.local/share/hexen2demo
 
 #### Eduke32
 Must follow XDG. Move all stuff in $HOME/.local/share/eduke32
+
+#### Sloccount
+Must follow XDG. Move all stuff in $HOME/.cache/slocdata
 
 ## Other patches
 
@@ -60,8 +63,10 @@ Run one copy of the program at a time.
 - Mednafen - can't read that pasta code. I found (maybe not), where is dotfiles is stored in code, but can't figure how can I fix that.
 - FBReader - same as Mednafen. Cool structure of code, yep, but I just CANT find where dotfiles created\writed.
 - QCalculator - there is two package depends of each other. I found, and fix the dots, but it's doesn't work.
-- Audacity - done
-- QTCreator - todo
+- Java - todo
+- SSH - todo
+- SVN - todo
+- WXHexEditor - todo
 - Tux racer - todo
 - GStreamer - todo
 - vim - todo
