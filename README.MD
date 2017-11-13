@@ -43,6 +43,9 @@ Must follow XDG. Move all configs in $HOME/.config/ssr
 #### UHexen
 Need to fix something. Must follow XDG. Move all stuff to $HOME/.local/share/hexen2 and $HOME/.local/share/hexen2demo.
 
+#### Eduke32
+Must follow XDG. Move all stuff in $HOME/.local/share/eduke32
+
 ## Other patches
 
 #### Skippy-xd

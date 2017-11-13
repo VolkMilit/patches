@@ -1,0 +1,19 @@
+*** common.cpp.orig	2017-11-13 22:52:23.000000000 +0800
+--- common.cpp	2017-11-13 22:52:29.132552589 +0800
+*************** void G_ExtInit(void)
+*** 319,325 ****
+  #elif defined(GEKKO)
+                        "apps/eduke32"
+  #else
+!                       ".eduke32"
+  #endif
+                        ,homedir);
+              asperr = addsearchpath(cwd);
+--- 319,325 ----
+  #elif defined(GEKKO)
+                        "apps/eduke32"
+  #else
+!                       ".local/share/eduke32"
+  #endif
+                        ,homedir);
+              asperr = addsearchpath(cwd);
